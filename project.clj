@@ -1,17 +1,15 @@
-(defproject lein-doc-pdf-test "1.0.0^S"
-  :description "Lein plugin for PDF generation"
-  :dependencies [
-                   ; main clojure library
-                   [org.clojure/clojure "1.2.1"]
-  ]
+(defproject lein-doc-pdf-test "1.0.0"
+  :description "Lein pdf generation test"
+  :dev-dependencies [[lein-doc-pdf "1.0.10"]]
   :doc-pdf {
     :changes {
         :input-files "CHANGES.textile"
-        :output-file "changes.pdf"
+        ; The filename is automatically computed, or you can specifiy it here
+        ; :output-file "changes.pdf"
         :style "style/changes.jar"
-        :fonts-folder "fonts"
-    }
+        ; you can also extract the content of the jar file and use the following:
+        ; :style "style"
+        ; :fonts-folder "fonts"
+    }    
   }
-  :dev-dependencies [
-                     [lein-doc-pdf "1.0.8"]
-                     [lein-eclipse "1.0.0"]] ) 
+ ) 
